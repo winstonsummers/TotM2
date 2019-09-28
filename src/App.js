@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
+import { BaseContainer } from './containers/BaseComponents';
 
-function App() {
-  return (
-    <div id="TotM2">
-      <h1>Welcome to Theater of the Mind 2</h1>
-    </div>
-  );
+/**
+ * @extends BaseContainer, React.Component
+ * The upper most container of the TotM2
+ */
+class App extends BaseContainer {
+  render() {
+    return (
+      <div>
+        welcome
+      </div>
+    )
+  }
 }
 
 export default App;
