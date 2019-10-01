@@ -3,8 +3,8 @@ import './App.css';
 import { BaseContainer } from './containers/BaseComponents';
 
 /**
- * @extends BaseContainer, React.Component
- * The upper most container of the TotM2
+ * @extends BaseContainer
+ * The upper most container of TotM2
  */
 class App extends BaseContainer {
   render() {

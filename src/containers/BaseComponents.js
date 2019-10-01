@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 /**
  * A base class for containers. 
  * @initialState { loading: true, errors: [] }
- * @method render method should be overridden and use React.cloneElement(this.props.children, [props], [...children]) https://reactjs.org/docs/react-api.html#cloneelement
+ * @method render Renders this.props.children, can be overridden if needed
  */
 export class BaseContainer extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export class BaseContainer extends Component {
   }
 
   /**
-   * @abstract Must be overridden
+   * Renders this.props.children, can be overridden if needed
    */
-  render() { return null }
+  render() { return this.props.children }
 }

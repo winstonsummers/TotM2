@@ -1,5 +1,5 @@
 import { configureStore } from 'redux-starter-kit';
-import { appReducer } from '../dux/App';
+import { appReducer } from './App';
 
 const store = configureStore({
   reducer: appReducer
