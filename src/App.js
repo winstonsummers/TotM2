@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BaseContainer } from './containers/BaseComponents';
+import { BaseContainer } from './views/BaseComponents';
 
 /**
  * @extends BaseContainer
