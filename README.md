@@ -14,8 +14,13 @@ This is a work in progress so we will track current features, planned features, 
 
 * Main Menu
 * Log Book and User Input
-* Class Model for Character
-  * solutions for character classes/races and inhereitence therein
+* Class Models for Characters
+  * solutions for character occupation/races and inhereitence therein
+  * character creation
+* Mechanics for Combat
+* Mechanics for Magic
+* Class Models for items/gear
+* Class Models for monsters
 
 ### Known Bugs
 
