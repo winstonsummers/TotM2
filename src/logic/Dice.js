@@ -13,6 +13,7 @@ function rollaD(sides) {
 /**
  * Add up Values
  * @param {Array<number>} list 
+ * @return {number}
  */
 function sumList(list = []) {
   const addUp = (a, b) => {a + b};
@@ -47,7 +48,7 @@ function percentAsD10s() {
 /**
  * @return {number} a number between one and 100 generated as if rolling a d100
  */
-function percentAsd100() {
+function percentAsD100() {
   return rollaD(100)
 }
 
@@ -73,19 +74,50 @@ export const rollDiceByQuantity = (numberOfDice) => {
   }
 }
 
-// Functions for the standard dice every game knows and loves
+/**
+ * Currying function for when you just need to do the same roll over and over and over again
+ * @param {number} numberOfDice 
+ * @param {number} numberOfSides 
+ */
+export const rollDiceOverAndOver = (numberOfDice, numberOfSides) => {
+  (addUp) => {
+    return rollD(numberOfSides, numberOfDice, addUp);
+  }
+}
 
-export const rollD4  = rollDiceBySides(4);
-export const rollD6  = rollDiceBySides(6);
-export const rollD8  = rollDiceBySides(8);
-export const rollD10 = rollDiceBySides(10);
-export const rollD12 = rollDiceBySides(12);
-export const rollD20 = rollDiceBySides(20);
+// Functions for the standard dice every gamer knows and loves
+
+export const rollD4  = () => rollDiceBySides(4);
+export const rollD6  = () => rollDiceBySides(6);
+export const rollD8  = () => rollDiceBySides(8);
+export const rollD10 = () => rollDiceBySides(10);
+export const rollD12 = () => rollDiceBySides(12);
+export const rollD20 = () => rollDiceBySides(20);
 
 /**
  * @param {boolean} asD10s weither to generate percent number by rolling two d10s or a d100
  * @return {number} percent number 
  */
 export function rollPercentile(asD10s = true) {
-  return asD10s ? percentAsD10s() : percentAsd100();
+  return asD10s ? percentAsD10s() : percentAsD100();
+}
+
+// Helper functions that only apply to dice :D
+
+/**
+ * returns number -1 which would be an index value since the dice functions are all setup to generate numbers between 1 - [sides]
+ * @param {number} value 
+ * @return {number}
+ */
+export function dieRollToArrIndex(value) {
+  return value - 1;
+}
+
+/**
+ * Curried function for rolling stats
+ */
+const statRoll = rollDiceOverAndOver(3, 6);
+
+export function generateStatValue() {
+  return statRoll()
 }

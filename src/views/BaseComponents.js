@@ -17,5 +17,11 @@ export class BaseContainer extends Component {
   /**
    * Renders this.props.children, can be overridden if needed
    */
-  render() { return this.props.children }
+  render() { 
+    return (
+      <> {/** whooooooooo fragments */}
+        {this.props.children}
+      </>
+    ) 
+  }
 }

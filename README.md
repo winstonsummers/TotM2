@@ -42,6 +42,7 @@ This is a work in progress so we will track current features, planned features, 
   * Functional Components as Views
 * ReduxJS
   * redux-starter-kit
+    * redux-thunk
   * Dux pattern
   * connected-react-router
 * CSS3

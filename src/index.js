@@ -1,27 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import './Index.css';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux'
-import { Route, Switch } from 'react-router' // react-router v4/v5
-import { ConnectedRouter } from 'connected-react-router'
-import configureStore, { history } from './redux/configureStore'
+import { Provider } from 'react-redux';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
+import configureStore, { history } from './redux/configureStore';
+import ErrorPage from './views/errorPage';
 
-const store = configureStore(/* provide initial state if any */)
 
-ReactDOM.render(
+const store = configureStore();
+
+const greatestAppContainer = (
   <Provider store={store}>
-    <ConnectedRouter history={history}> { /* place ConnectedRouter under Provider */ }
-      <> { /* your usual react-router v4/v5 routing */ }
+    <ConnectedRouter history={history}>
+      <>
         <Switch>
-          <Route exact path="/" render={() => (<App />)} />
-          <Route render={() => (<div>Miss</div>)} />
+          <Route exact path="/" render={() => (<div>the main page :D</div>)} />
+          <Route render={<ErrorPage />} />
         </Switch>
       </>
     </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
+
+
+
+ReactDOM.render(greatestAppContainer, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
