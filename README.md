@@ -13,6 +13,7 @@ This is a work in progress so we will track current features, planned features, 
 ### Current Features
 
 * Logic to handle dice rolls
+* Error Route
 
 ### Planned Features
 
@@ -30,6 +31,8 @@ This is a work in progress so we will track current features, planned features, 
 * Class Models for items/gear
 * Class Models for monsters
 * Routes
+  * Main Menu
+  * Game
 
 ### Known Bugs
 
@@ -38,8 +41,6 @@ This is a work in progress so we will track current features, planned features, 
 ## Tech used
 
 * ReactJS
-  * Class Componets as Containers
-  * Functional Components as Views
 * ReduxJS
   * redux-starter-kit
     * redux-thunk
